@@ -1,0 +1,27 @@
+From a64941a3e62532d66a5520939c0d663116575978 Mon Sep 17 00:00:00 2001
+From: Tyler Baker <tyler@opensourcefoundries.com>
+Date: Fri, 1 Dec 2017 09:34:44 -0800
+Subject: [PATCH 5/5] cfg80211: cfg80211_rx_assoc_resp replaces
+ cfg80211_send_rx_assoc
+
+Signed-off-by: Tyler Baker <tyler@opensourcefoundries.com>
+---
+ include/ioctl_cfg80211.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/include/ioctl_cfg80211.h b/include/ioctl_cfg80211.h
+index 75159a6..363792a 100644
+--- a/include/ioctl_cfg80211.h
++++ b/include/ioctl_cfg80211.h
+@@ -156,7 +156,7 @@ bool rtw_cfg80211_pwr_mgmt(_adapter *adapter);
+ #if (LINUX_VERSION_CODE < KERNEL_VERSION(3,4,0))  && !defined(COMPAT_KERNEL_RELEASE)
+ #define rtw_cfg80211_send_rx_assoc(adapter, bss, buf, len) cfg80211_send_rx_assoc((adapter)->pnetdev, buf, len)
+ #else
+-#define rtw_cfg80211_send_rx_assoc(adapter, bss, buf, len) cfg80211_send_rx_assoc((adapter)->pnetdev, bss, buf, len)
++#define rtw_cfg80211_send_rx_assoc(adapter, bss, buf, len) cfg80211_rx_assoc_resp((adapter)->pnetdev, bss, buf, len, 0)
+ #endif
+ 
+ #if (LINUX_VERSION_CODE < KERNEL_VERSION(3,6,0))
+-- 
+2.9.3
+

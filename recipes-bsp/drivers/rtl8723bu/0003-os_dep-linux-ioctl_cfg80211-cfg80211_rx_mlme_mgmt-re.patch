@@ -1,0 +1,27 @@
+From eb49e7b321edbcbaee33d9d21a788963a090941f Mon Sep 17 00:00:00 2001
+From: Tyler Baker <tyler@opensourcefoundries.com>
+Date: Fri, 1 Dec 2017 09:37:50 -0800
+Subject: [PATCH 3/3] os_dep/linux/ioctl_cfg80211: cfg80211_rx_mlme_mgmt
+ replaces cfg80211_send_disassoc
+
+Signed-off-by: Tyler Baker <tyler@opensourcefoundries.com>
+---
+ os_dep/linux/ioctl_cfg80211.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/os_dep/linux/ioctl_cfg80211.c b/os_dep/linux/ioctl_cfg80211.c
+index 98ec2a6..64b9d67 100644
+--- a/os_dep/linux/ioctl_cfg80211.c
++++ b/os_dep/linux/ioctl_cfg80211.c
+@@ -3378,7 +3378,7 @@ void rtw_cfg80211_indicate_sta_disassoc(_adapter *padapter, unsigned char *da, u
+ 	#elif (LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,37)) && !defined(CONFIG_CFG80211_FORCE_COMPATIBLE_2_6_37_UNDER)
+ 	rtw_cfg80211_rx_mgmt(padapter, freq, 0, mgmt_buf, frame_len, GFP_ATOMIC);
+ 	#else //COMPAT_KERNEL_RELEASE
+-	cfg80211_send_disassoc(padapter->pnetdev, mgmt_buf, frame_len);	
++	cfg80211_rx_mlme_mgmt(padapter->pnetdev, mgmt_buf, frame_len);
+ 	//cfg80211_rx_action(padapter->pnetdev, freq, mgmt_buf, frame_len, GFP_ATOMIC);
+ 	#endif //COMPAT_KERNEL_RELEASE
+ #endif /* defined(RTW_USE_CFG80211_STA_EVENT) */
+-- 
+2.9.3
+

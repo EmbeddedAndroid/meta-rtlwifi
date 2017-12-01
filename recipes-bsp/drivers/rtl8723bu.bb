@@ -12,7 +12,10 @@ PV = "1.0-git"
 
 # add support for ARM platform
 SRC_URI =+ "file://0001-ARM-Support.patch \
-            file://0002-realtek-Disable-IPS-mode.patch "
+            file://0002-realtek-Disable-IPS-mode.patch \
+            file://0003-os_dep-linux-ioctl_cfg80211-cfg80211_rx_mlme_mgmt-re.patch \
+            file://0004-os_dep-ioctl_cfg80211-cfg80211_rx_mlme_mgmt-replaces.patch \
+            file://0005-cfg80211-cfg80211_rx_assoc_resp-replaces-cfg80211_se.patch "
 
 DEPENDS = "virtual/kernel"
 
