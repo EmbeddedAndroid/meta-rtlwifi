@@ -6,7 +6,6 @@ LIC_FILES_CHKSUM = "file://Kconfig;md5=ce4c7adf40ddcf6cfca7ee2b333165f0"
 PV = "1.0-git"
 SRCREV = "8534c0f3e042c03d6dd270994c6742bea3262913"
 SRC_URI = "git://github.com/lwfinger/rtl8723bu.git;protocol=https \
-           file://0001-ARM-Support.patch \
            file://0002-realtek-Disable-IPS-mode.patch "
 
 S = "${WORKDIR}/git"
@@ -16,7 +15,9 @@ DEPENDS = "virtual/kernel"
 inherit module
 
 EXTRA_OEMAKE  = "ARCH=${ARCH} \
-                 KSRC=${STAGING_KERNEL_BUILDDIR}"
+                 KSRC=${STAGING_KERNEL_BUILDDIR} \
+                 USER_EXTRA_CFLAGS='-DCONFIG_IOCTL_CFG80211 -DRTW_USE_CFG80211_STA_EVENT' \
+                "
 
 do_compile () {
     oe_runmake
