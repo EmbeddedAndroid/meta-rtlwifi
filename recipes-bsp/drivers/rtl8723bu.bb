@@ -4,7 +4,7 @@ LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://Kconfig;md5=ce4c7adf40ddcf6cfca7ee2b333165f0"
 
 PV = "1.0-git"
-SRCREV = "8534c0f3e042c03d6dd270994c6742bea3262913"
+SRCREV = "db024b4c130283a0372d2f89a015a3a5c36f9419"
 SRC_URI = "git://github.com/lwfinger/rtl8723bu.git;protocol=https \
            file://0002-realtek-Disable-IPS-mode.patch "
 
