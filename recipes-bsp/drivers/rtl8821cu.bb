@@ -17,11 +17,6 @@ inherit module
 EXTRA_OEMAKE  = "ARCH=${ARCH}"
 EXTRA_OEMAKE += "KSRC=${STAGING_KERNEL_BUILDDIR}"
 
-#do_compile () {
-#    unset LDFLAGS
-#    oe_runmake
-#}
-
 MODULES_INSTALL_TARGET="install"
 
 do_install () {
