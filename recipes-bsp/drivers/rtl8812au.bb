@@ -19,6 +19,10 @@ EXTRA_OEMAKE += "KSRC=${STAGING_KERNEL_BUILDDIR}"
 
 MODULES_INSTALL_TARGET="install"
 
+do_compile () {
+    oe_runmake
+}
+
 do_install () {
     install -d ${D}${nonarch_base_libdir}/modules/${KERNEL_VERSION}/kernel/drivers/net/wireless
     install -m 0644 ${B}/8812au.ko ${D}${nonarch_base_libdir}/modules/${KERNEL_VERSION}/kernel/drivers/net/wireless/rtl8812au.ko
