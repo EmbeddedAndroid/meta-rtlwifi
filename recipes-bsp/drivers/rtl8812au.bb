@@ -17,13 +17,13 @@ inherit module
 EXTRA_OEMAKE  = "ARCH=${ARCH}"
 EXTRA_OEMAKE += "KSRC=${STAGING_KERNEL_BUILDDIR}"
 
-do_compile () {
-    unset LDFLAGS
-    oe_runmake
-}
+MODULES_INSTALL_TARGET="install"
 
 do_install () {
-    install -d ${D}/lib/modules/${KERNEL_VERSION}
-    install -m 0755 ${B}/rtl8812au.ko ${D}/lib/modules/${KERNEL_VERSION}/rtl8812au.ko
+    install -d ${D}${nonarch_base_libdir}/modules/${KERNEL_VERSION}/kernel/drivers/net/wireless
+    install -m 0644 ${B}/8812au.ko ${D}${nonarch_base_libdir}/modules/${KERNEL_VERSION}/kernel/drivers/net/wireless/rtl8812au.ko
 }
+
+FILES_${PN} += "${nonarch_base_libdir}/modules/${KERNEL_VERSION}/kernel/drivers/net/wireless/rtl8812au.ko"
+RPROVIDES_${PN} += "kernel-module-${PN}-${KERNEL_VERSION}"
 
