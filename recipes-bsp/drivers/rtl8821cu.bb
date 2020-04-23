@@ -1,14 +1,14 @@
 SUMMARY = "RTL8821CU kernel driver (wifi)"
 DESCRIPTION = "RTL8821CU kernel driver"
 LICENSE = "GPLv2"
-LIC_FILES_CHKSUM = "file://Kconfig;md5=bc2a2406eb72158dee196a8486a2aec9"
+LIC_FILES_CHKSUM = "file://LICENSE;md5=b234ee4d69f5fce4486a80fdaf4a4263"
 
-SRCREV = "3d9d2401a8912fd96efdec3bf0c88a4e8bab2d76"
+SRCREV = "2dace83e5f4cada52bbe3930b864c3eb82390b1f"
 SRC_URI = "git://github.com/spriteguard/rtl8821CU;protocol=https "
 
 S = "${WORKDIR}/git"
 
-PV = "1.0-git"
+PV = "5.8.1.2-git"
 
 DEPENDS = "virtual/kernel"
 
