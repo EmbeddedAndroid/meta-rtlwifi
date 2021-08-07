@@ -24,6 +24,6 @@ do_install () {
     install -m 0644 ${B}/8821cu.ko ${D}${nonarch_base_libdir}/modules/${KERNEL_VERSION}/kernel/drivers/net/wireless/rtl8821cu.ko
 }
 
-FILES_${PN} += "${nonarch_base_libdir}/modules/${KERNEL_VERSION}/kernel/drivers/net/wireless/rtl8821cu.ko"
-RPROVIDES_${PN} += "kernel-module-${PN}-${KERNEL_VERSION}"
+FILES:${PN} += "${nonarch_base_libdir}/modules/${KERNEL_VERSION}/kernel/drivers/net/wireless/rtl8821cu.ko"
+RPROVIDES:${PN} += "kernel-module-${PN}-${KERNEL_VERSION}"
 
