@@ -32,3 +32,4 @@ do_install () {
 }
 
 FILES_${PN} += "${sysconfdir}"
+RDEPENDS_${PN} += "linux-firmware-rtl8723"
