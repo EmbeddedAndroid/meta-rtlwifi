@@ -31,4 +31,5 @@ do_install () {
     echo "blacklist rtl8xxxu" > ${D}${sysconfdir}/modprobe.d/rtl8723-blacklist.conf
 }
 
-FILES_${PN} += "${sysconfdir}"
+FILES:${PN} += "${sysconfdir}"
+RDEPENDS:${PN} += "linux-firmware-rtl8723"
