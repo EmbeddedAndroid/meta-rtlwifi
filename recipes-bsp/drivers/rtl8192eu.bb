@@ -23,7 +23,7 @@ do_compile () {
 }
 
 do_install () {
-    install -d ${D}/lib/modules/${KERNEL_VERSION}
-    install -m 0755 ${B}/8192eu.ko ${D}/lib/modules/${KERNEL_VERSION}/8192eu.ko
+    install -d ${D}${nonarch_base_libdir}/modules/${KERNEL_VERSION}
+    install -m 0755 ${B}/8192eu.ko ${D}${nonarch_base_libdir}/modules/${KERNEL_VERSION}/8192eu.ko
 }
 

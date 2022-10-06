@@ -24,8 +24,8 @@ do_compile () {
 }
 
 do_install () {
-    install -d ${D}/lib/modules/${KERNEL_VERSION}
-    install -m 0755 ${B}/8723bu.ko ${D}/lib/modules/${KERNEL_VERSION}/8723bu.ko
+    install -d ${D}${nonarch_base_libdir}/modules/${KERNEL_VERSION}
+    install -m 0755 ${B}/8723bu.ko ${D}${nonarch_base_libdir}/modules/${KERNEL_VERSION}/8723bu.ko
 
     install -d ${D}${sysconfdir}/modprobe.d
     echo "blacklist rtl8xxxu" > ${D}${sysconfdir}/modprobe.d/rtl8723-blacklist.conf
