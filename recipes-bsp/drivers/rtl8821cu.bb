@@ -1,29 +1,16 @@
 SUMMARY = "RTL8821CU kernel driver (wifi)"
 DESCRIPTION = "RTL8821CU kernel driver"
 LICENSE = "GPL-2.0-only"
-LIC_FILES_CHKSUM = "file://LICENSE;md5=b234ee4d69f5fce4486a80fdaf4a4263"
+LIC_FILES_CHKSUM = "file://LICENSE;md5=ab842b299d0a92fb908d6eb122cd6de9"
 
-SRCREV = "2dace83e5f4cada52bbe3930b864c3eb82390b1f"
-SRC_URI = "git://github.com/spriteguard/rtl8821CU;protocol=https;branch=master"
-
-S = "${WORKDIR}/git"
-
-PV = "5.8.1.2-git"
-
-DEPENDS = "virtual/kernel"
+FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
+SRCREV = "e49409f22ceea0d5b5ef431e6170580028b84c9d"
+SRC_URI = " \
+    git://github.com/morrownr/8821cu-20210916;protocol=https;branch=main \
+    file://0001-use-modules_install-as-wanted-by-yocto.patch \
+"
+PV = "5.12.0.4-git"
 
 inherit module
-
-EXTRA_OEMAKE  = "ARCH=${ARCH}"
-EXTRA_OEMAKE += "KSRC=${STAGING_KERNEL_BUILDDIR}"
-
-MODULES_INSTALL_TARGET="install"
-
-do_install () {
-    install -d ${D}${nonarch_base_libdir}/modules/${KERNEL_VERSION}/kernel/drivers/net/wireless
-    install -m 0644 ${B}/8821cu.ko ${D}${nonarch_base_libdir}/modules/${KERNEL_VERSION}/kernel/drivers/net/wireless/rtl8821cu.ko
-}
-
-FILES:${PN} += "${nonarch_base_libdir}/modules/${KERNEL_VERSION}/kernel/drivers/net/wireless/rtl8821cu.ko"
-RPROVIDES:${PN} += "kernel-module-${PN}-${KERNEL_VERSION}"
-
+S = "${WORKDIR}/git"
+EXTRA_OEMAKE:append = " KSRC=${STAGING_KERNEL_DIR}"
