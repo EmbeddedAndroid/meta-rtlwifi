@@ -1,14 +1,14 @@
 SUMMARY = "RTL8192AU kernel driver (wifi)"
 DESCRIPTION = "RTL8192AU kernel driver"
 LICENSE = "GPL-2.0-only"
-LIC_FILES_CHKSUM = "file://hal/hal_com_c2h.h;md5=1b3bc120406d289b6d969a5dd22cac87;endline=19"
+LIC_FILES_CHKSUM ?= "file://${COMMON_LICENSE_DIR}/GPL-2.0-only;md5=801f80980d171dd6425610833a22dbe6"
 
 SRC_URI = "git://github.com/Mange/rtl8192eu-linux-driver.git;protocol=https;branch=realtek-4.4.x"
-SRCREV = "49a0fb502023d0f905404d0d18f7e4df65327f75"
+SRCREV = "528ae31705764d78cc117abd604d9b799bd52543"
 
 S = "${WORKDIR}/git"
 
-PV = "1.0-git"
+PV = "4.4.1-git"
 
 DEPENDS = "virtual/kernel"
 
