@@ -3,8 +3,9 @@ DESCRIPTION = "RTL8723 kernel driver"
 LICENSE = "GPL-2.0-only"
 LIC_FILES_CHKSUM = "file://Kconfig;md5=ce4c7adf40ddcf6cfca7ee2b333165f0"
 
-PV = "1.0-git"
-SRCREV = "ce4490b1e0dcedec30659dc20b945b90d9c3d83c"
+FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
+PV = "4.3.6.11-git"
+SRCREV = "92c19318cb54ef96c2cfb4a22b2c98eb512812d8"
 SRC_URI = "git://github.com/lwfinger/rtl8723bu.git;protocol=https;branch=master \
            file://0002-realtek-Disable-IPS-mode.patch "
 
