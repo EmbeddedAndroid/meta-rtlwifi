@@ -5,7 +5,7 @@ Realtek wifi chipsets
 
 * https://www.realtek.com/en/products/communications-network-ics/category/wireless-lan-ics
 * https://wikidevi.wi-cat.ru/Realtek
-
+* https://gitlab.com/linux-wifi-collection/realtek
 
 
 
