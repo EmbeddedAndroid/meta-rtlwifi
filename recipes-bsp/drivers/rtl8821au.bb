@@ -1,6 +1,6 @@
 SUMMARY = "Linux driver for RTL8811AU and RTL8821AU chipsets"
 LICENSE = "GPL-2.0-only"
-LIC_FILES_CHKSUM = "file://LICENSE;md5=ca671256c791bbbf7c985ca88dc89fc9"
+LIC_FILES_CHKSUM = "file://LICENSE;md5=ab842b299d0a92fb908d6eb122cd6de9"
 FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 
 inherit module
