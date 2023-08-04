@@ -1,0 +1,23 @@
+From e29aadaa5dddbf53965f364d16846cf51b42d0fc Mon Sep 17 00:00:00 2001
+From: Yutaka KOBAYASHI <kobayuta@gmail.com>
+Date: Wed, 2 Aug 2023 19:56:01 +0900
+Subject: [PATCH] Add make target(modules_install)
+
+---
+ Makefile | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/Makefile b/Makefile
+index f32615e..5f85324 100644
+--- a/Makefile
++++ b/Makefile
+@@ -2392,6 +2392,9 @@ all: modules
+ modules:
+ 	$(MAKE) ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE) -C $(KSRC) M=$(shell pwd)  modules
+ 
++modules_install:
++	$(MAKE) ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE) -C $(KSRC) M=$(shell pwd)  modules_install
++
+ strip:
+ 	$(CROSS_COMPILE)strip $(MODULE_NAME).ko --strip-unneeded
+ 
