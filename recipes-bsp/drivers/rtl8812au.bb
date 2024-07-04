@@ -1,17 +1,16 @@
 SUMMARY = "Realtek 802.11n WLAN Adapter Linux driver"
 LICENSE = "GPL-2.0-only"
-LIC_FILES_CHKSUM = "file://LICENSE;md5=ab842b299d0a92fb908d6eb122cd6de9"
+LIC_FILES_CHKSUM = "file://LICENSE;md5=b1918d7d89f091725a3188ff95f7c72b"
 FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 
 inherit module
 
 SRC_URI = " \
-    git://github.com/morrownr/8812au-20210629.git;protocol=https;branch=main \
+    git://github.com/morrownr/8812au-20210820.git;protocol=https;branch=main \
     file://0001-Use-modules_install-as-wanted-by-yocto.patch \
 "
 
-#SRCREV = "663dc8fe1fbc100be9ed532f003c6eb90dab3d33"
-SRCREV = "b5f4e6e894eca8fea38661e2fc22a2570e0274ad"
+SRCREV = "c0efee9cd121d9f0c815d9771475f76339a8f7d3"
 
 PV = "5.13.6-git"
 S = "${WORKDIR}/git"
