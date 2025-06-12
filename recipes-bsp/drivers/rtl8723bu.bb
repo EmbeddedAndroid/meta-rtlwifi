@@ -17,8 +17,10 @@ inherit module
 
 EXTRA_OEMAKE  = "ARCH=${ARCH} \
                  KSRC=${STAGING_KERNEL_BUILDDIR} \
-                 USER_EXTRA_CFLAGS='-DCONFIG_IOCTL_CFG80211 -DRTW_USE_CFG80211_STA_EVENT' \
-                "
+                 USER_EXTRA_CFLAGS='-DCONFIG_IOCTL_CFG80211 -DRTW_USE_CFG80211_STA_EVENT \
+                 -fdebug-prefix-map=${WORKDIR}=. -fdebug-prefix-map=${TMPDIR}=. \
+                 -fmacro-prefix-map=${WORKDIR}=. -fmacro-prefix-map=${TMPDIR}=. \
+'"
 
 do_compile () {
     oe_runmake
