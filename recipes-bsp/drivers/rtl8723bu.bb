@@ -5,7 +5,7 @@ LIC_FILES_CHKSUM = "file://Kconfig;md5=ce4c7adf40ddcf6cfca7ee2b333165f0"
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 PV = "4.3.6.11-git"
-SRCREV = "92c19318cb54ef96c2cfb4a22b2c98eb512812d8"
+SRCREV = "af3a408d6399655b0db23c2c8720436ca725ca47"
 SRC_URI = "git://github.com/lwfinger/rtl8723bu.git;protocol=https;branch=master \
            file://0002-realtek-Disable-IPS-mode.patch "
 
